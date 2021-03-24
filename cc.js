@@ -37,7 +37,7 @@ var data = {
   figure: document.getElementById('figure'),
   currentYear: 2020,
   currentCountry: "A",
-  selectedAction: ""
+  ready: false
 };
 
 var groupActions = {
@@ -166,28 +166,31 @@ function submitChoice(group) {
     Budget_C = budget;
   }
 
-  var contributeForm = document.getElementById("bonus".concat(group).concat("Give"));
-  var contribute = 0;
-  if (group === "A") {
-    Budget_A = Budget_A - contribute;
+  var contribute = document.getElementById("bonus".concat(group).concat("Give")).value;
+  if (contribute !== "" && contribute != undefined) {
+    if (group === "A") {
+      Budget_A = Budget_A - Number(contribute);
+    }
+    else if (group === "B") {
+      Budget_B = Budget_B - Number(contribute);
+    }
+    else if (group === "C") {
+      Budget_C = Budget_C - Number(contribute);
+    }
+    International = International + Number(contribute);
   }
-  else if (group === "B") {
-    Budget_B = Budget_B - contribute;
-  }
-  else if (group === "C") {
-    Budget_C = Budget_C - contribute;
-  }
-  International = International + contribute;
 
-  var receive = document.getElementById("bonus".concat(group).concat("Get"));
-  if (group === "A") {
-    Budget_A = Budget_A + receive;
+  var receive = document.getElementById("bonus".concat(group).concat("Get")).value;
+  if (receive !== "" && receive != undefined) {
+    if (group === "A") {
+      Budget_A = Budget_A + Number(receive);
+    }
+    else if (group === "B") {
+      Budget_B = Budget_B + Number(receive);
+    }
+    else if (group === "C") {
+      Budget_C = Budget_C + Number(receive);
+    }
+    International = International - Number(receive);
   }
-  else if (group === "B") {
-    Budget_B = Budget_B + receive;
-  }
-  else if (group === "C") {
-    Budget_C = Budget_C + receive;
-  }
-  International = International - receive;
 };
