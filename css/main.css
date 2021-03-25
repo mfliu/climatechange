@@ -45,3 +45,10 @@ canvas {
   padding-left: 2rem;
 }
 
+.container {
+  max-width: 1500px;
+}
+
+.col-sm {
+  max-width: 450px;
+}

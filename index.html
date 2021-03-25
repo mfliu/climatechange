@@ -10,7 +10,7 @@
     <script src="plotly-latest.min.js"></script>
   </head>
 
-  <body>
+  <body onload="startYear()">
     <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
       <a id="bar-title" class="navbar-brand" href="/">Obama Academy Climate Change Activity</a>
     </header>
@@ -18,6 +18,7 @@
     <div class="container">
       <main class="bd-content" role="main">
       <div class="row">
+          <div class="col-lg">
           <table class="table">
             <thead>
               <tr>
@@ -25,8 +26,9 @@
                 <th scope="col">Action</th>
                 <th scope="col">Cost (A/B/C)</th>
                 <th scope="col">Effect (A/B/C)</th>
-              </thead>
-              <tbody>
+              </tr>
+            </thead>
+            <tbody>
                 <tr>
                   <th scope="row">1</th>
                   <td>Convert to renewable energy</td>
@@ -89,6 +91,8 @@
                 </tr>
               </tbody>
           </table>
+          </div>
+          
       </div>
       <div class="row">
         <div class="col-sm">
@@ -97,11 +101,11 @@
         <div class="col-lg">
           <nav aria-label="...">
           <ul class="pagination pagination-lg">
-            <li id="2020" class="page-item active"><a class="page-link" href="#" onclick="startYear(2020);">2020</a></li>
-            <li id="2040" class="page-item"><a class="page-link" href="#" onclick="startYear(2040);">2040</a></li>
-            <li id="2060" class="page-item"><a class="page-link" href="#" onclick="startYear(2060);">2060</a></li>
-            <li id="2080" class="page-item"><a class="page-link" href="#" onclick="startYear(2080);">2080</a></li>
-            <li id="2100" class="page-item"><a class="page-link" href="#" onclick="startYear(2100);">2100</a></li>
+            <li id="2020" class="page-item active"><a class="page-link" href="#">2020</a></li>
+            <li id="2040" class="page-item"><a class="page-link" href="#">2040</a></li>
+            <li id="2060" class="page-item"><a class="page-link" href="#">2060</a></li>
+            <li id="2080" class="page-item"><a class="page-link" href="#">2080</a></li>
+            <li id="2100" class="page-item"><a class="page-link" href="#">2100</a></li>
           </ul>
           </nav>
           <ul class="nav nav-tabs" role="tablist">
@@ -141,7 +145,7 @@
                 <input class="form-control" type="number" placeholder="Contribute to international climate fund" 
                       aria-label="default input example" id="bonusBGive">
                 <input class="form-control" type="number" placeholder="Receive from international climate fund"
-                      aria-label="default input example" id="bonsuBGet">
+                      aria-label="default input example" id="bonusBGet">
               </div>
               <button onclick="submitChoice('B');" class="btn btn-primary">Submit</a>
             </div>
@@ -161,7 +165,30 @@
           </div>
         </div>
       </div>
-      <main>
+      <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Group A</th>
+              <th scope="col">Group B</th>
+              <th scope="col">Group C</th>
+              <th scope="col">International</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="budgetA">$10T</td>
+              <td id="budgetB">$6T</td>
+              <td id="budgetC">$1T</td>
+              <td id="budgetInt">$0T</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-primary" id="Done" onclick="submitTimepoint();">Done</button>
+      </div>
+      </main>
     </div>
   <script src="cc.js"></script>
   </body>
