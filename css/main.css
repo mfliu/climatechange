@@ -91,6 +91,10 @@ canvas {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
 
+.nav-item > .active > a {
+  color: blue;
+}
+
 [type=button], [type=reset], [type=submit], button {
     -webkit-appearance: button;
 }

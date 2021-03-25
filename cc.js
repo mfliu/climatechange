@@ -85,11 +85,15 @@ function makeActionPanel(input) {
   prevPanel.classList.remove("active");
   prevPanel.classList.remove("show");
   prevPanel.setAttribute("aria-current", "false");
+  prevButton = document.getElementById('tab'.concat(data.currentCountry));
+  prevButton.classList.remove("active");
   data.currentCountry = input;  
 
   actionChoice = document.getElementById('actionChoice'.concat(input));
   actionChoice.classList.add("active");
   actionChoice.classList.add("show");
+  actionButton = document.getElementById('tab'.concat(input));
+  actionButton.classList.add("active");
   actionChoice.setAttribute("aria-current", "true");
   actionList = document.getElementById('actionList'.concat(input));
   while (actionList.firstChild) {
